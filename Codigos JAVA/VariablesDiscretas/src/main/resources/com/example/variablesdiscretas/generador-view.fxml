@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.variablesdiscretas.Controller">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+
+    <VBox prefWidth="250.0" spacing="10.0">
+        <Label text="Seleccionar Distribución:" />
+        <ComboBox fx:id="comboDistribucion" prefWidth="250.0" />
+
+        <Label fx:id="lblParametro1" text="Parámetro 1:" />
+        <TextField fx:id="txtParametro1" />
+
+        <Label fx:id="lblParametro2" text="Parámetro 2:" />
+        <TextField fx:id="txtParametro2" />
+
+        <Label text="Cantidad de muestras:" />
+        <TextField fx:id="txtCantidad" text="1000" />
+
+        <Button onAction="#onGenerarButtonClick" prefWidth="250.0" text="Generar" />
+
+        <Label text="Muestra (primeros 100):" />
+        <TextArea fx:id="txtResultados" prefHeight="150.0" wrapText="true" />
+    </VBox>
+
+    <VBox HBox.hgrow="ALWAYS">
+        <BarChart fx:id="barChart" title="Distribución de Frecuencias">
+            <xAxis>
+                <CategoryAxis label="Valor (X)" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Frecuencia" />
+            </yAxis>
+        </BarChart>
+    </VBox>
+</HBox>

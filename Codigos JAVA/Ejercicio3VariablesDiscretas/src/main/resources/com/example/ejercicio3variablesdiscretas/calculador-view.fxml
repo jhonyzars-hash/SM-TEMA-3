@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejercicio3variablesdiscretas.Controller">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+
+    <VBox prefWidth="280.0" spacing="10.0">
+        <Label text="Seleccionar Modelo:" />
+        <ComboBox fx:id="comboModelo" prefWidth="280.0" />
+
+        <Label fx:id="lblParam1" text="Parámetro 1:" />
+        <TextField fx:id="txtParam1" />
+
+        <Label fx:id="lblParam2" text="Parámetro 2:" />
+        <TextField fx:id="txtParam2" />
+
+        <Label text="Evaluaciones máximas (k):" />
+        <TextField fx:id="txtMaxK" text="10" />
+
+        <Button onAction="#calcularDistribucion" prefWidth="280.0" text="Calcular Probabilidades" />
+
+        <Label text="Resultados Calculados:" />
+        <TextArea fx:id="txtSalida" prefHeight="160.0" wrapText="true" />
+    </VBox>
+
+    <VBox HBox.hgrow="ALWAYS">
+        <BarChart fx:id="graficoBarras" title="Función de Masa de Probabilidad P(X=k)">
+            <xAxis>
+                <CategoryAxis label="Valor k" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Probabilidad" />
+            </yAxis>
+        </BarChart>
+    </VBox>
+</HBox>

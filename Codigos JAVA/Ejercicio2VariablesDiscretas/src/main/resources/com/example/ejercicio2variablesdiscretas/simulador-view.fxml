@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejercicio2variablesdiscretas.Controller">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+
+    <VBox prefWidth="260.0" spacing="10.0">
+        <Label text="Modelo de Simulación:" />
+        <ComboBox fx:id="comboModelo" prefWidth="260.0" />
+
+        <Label fx:id="lblCampo1" text="Parámetro 1:" />
+        <TextField fx:id="txtCampo1" />
+
+        <Label fx:id="lblCampo2" text="Parámetro 2:" />
+        <TextField fx:id="txtCampo2" />
+
+        <Label fx:id="lblCampo3" text="Parámetro 3:" />
+        <TextField fx:id="txtCampo3" />
+
+        <Label text="Número de simulaciones:" />
+        <TextField fx:id="txtMuestras" text="500" />
+
+        <Button onAction="#ejecutarSimulacion" prefWidth="260.0" text="Simular Escenario" />
+
+        <Label text="Registro de Eventos:" />
+        <TextArea fx:id="txtSalida" prefHeight="120.0" wrapText="true" />
+    </VBox>
+
+    <VBox HBox.hgrow="ALWAYS">
+        <BarChart fx:id="graficoBarras" title="Frecuencia de Ocurrencia del Evento">
+            <xAxis>
+                <CategoryAxis label="Resultado" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Veces Observado" />
+            </yAxis>
+        </BarChart>
+    </VBox>
+</HBox>
